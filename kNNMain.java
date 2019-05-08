@@ -12,20 +12,18 @@ public class kNNMain{
     // the desired file. Choose a given DataPoint, and print its features and label
 		
 		int dataPointNum = 5;
-		var filePath = DataSet.readDataSet("data/iris.csv");
+		List<DataPoint> dataset = DataSet.readDataSet("data/iris.csv");
 
         System.out.print("DataPoint #" + dataPointNum + " feature is: ");
-        System.out.println(filePath.get(dataPointNum).getX());
+        String printablex = Arrays.toString (dataset.get(dataPointNum).getX());
+        System.out.println(printablex);
         System.out.print("DataPoint #" + dataPointNum + " label is: ");
-        System.out.println(filePath.get(dataPointNum).getLabel());
+        System.out.println(dataset.get(dataPointNum).getLabel());
 
     //TASK 2:Use the DataSet class to split the fullDataSet into Training and Held Out Test Dataset
-
-
-    // TASK 3: Use the DataSet class methods to plot the 2D data (binary and multi-class)
-
-
-
+	  List<DataPoint> testSet= DataSet.getTrainingSet(dataset,0.8);
+	 List<DataPoint> trainingSet= DataSet.getTestSet(dataset,0.2);
+	
     // TASK 4: write a new method in DataSet.java which takes as arguments to DataPoint objects,
     // and returns the Euclidean distance between those two points (as a double)
 
