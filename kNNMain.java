@@ -10,8 +10,14 @@ public class kNNMain{
 
     // TASK 1: Use command line arguments to point DataSet.readDataSet method to
     // the desired file. Choose a given DataPoint, and print its features and label
+		
+		int dataPointNum = 5;
+		var filePath = DataSet.readDataSet("data/iris.csv");
 
-
+        System.out.print("DataPoint #" + dataPointNum + " feature is: ");
+        System.out.println(filePath.get(dataPointNum).getX());
+        System.out.print("DataPoint #" + dataPointNum + " label is: ");
+        System.out.println(filePath.get(dataPointNum).getLabel());
 
     //TASK 2:Use the DataSet class to split the fullDataSet into Training and Held Out Test Dataset
 
