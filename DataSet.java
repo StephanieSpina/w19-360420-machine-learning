@@ -408,5 +408,15 @@ public class DataSet {
     frame.setContentPane(plot);
     frame.setVisible(true);
   }
-
+  //Task 4.
+	
+	public static double EuclideanDistance (DataPoint dp1, DataPoint dp2){
+		
+		double[] points1 = dp1.getX(); 
+		double[] points2 = dp2.getX(); 
+		
+		
+		double Euclidean= Math.sqrt(Math.pow((points1[0]-points2[0]),2.0) + Math.pow((points1[1]-points2[1]),2.0));//need to find way to direct
+		return Euclidean;
+	}
 }
