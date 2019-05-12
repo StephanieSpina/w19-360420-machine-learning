@@ -410,13 +410,19 @@ public class DataSet {
   }
   //Task 4.
 	
-	public static double EuclideanDistance (DataPoint dp1, DataPoint dp2){
+	public static double distanceEuclid (DataPoint dp1, DataPoint dp2){
 		
 		double[] points1 = dp1.getX(); 
 		double[] points2 = dp2.getX(); 
+		double sum=0;
+		for(int i=0;i<points1.length;i++){
+		
+		double Euclidean= Math.pow((points1[i]-points2[i]),2.0);
+		sum=(sum+Euclidean);
+		
+		}
 		
 		
-		double Euclidean= Math.sqrt(Math.pow((points1[0]-points2[0]),2.0) + Math.pow((points1[1]-points2[1]),2.0));//need to find way to direct
-		return Euclidean;
+		return (Math.sqrt(sum));
 	}
 }
